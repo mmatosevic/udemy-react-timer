@@ -1,0 +1,4 @@
+To automatically recomplile bundle on change run:
+webpack -w
+
+To avoid full path for component names use aliases in webpack config.
