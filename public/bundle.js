@@ -25681,11 +25681,17 @@
 	                case 'stopped':
 	                    this.setState({ count: 0 });
 	                case 'paused':
-	                    clearInterval(this.timer);
-	                    this.timer = undefined;
+	                    this.clearTimer();
 	                    break;
 	            }
 	        }
+	    },
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.clearTimer();
+	    },
+	    clearTimer: function clearTimer() {
+	        clearInterval(this.timer);
+	        this.timer = undefined;
 	    },
 	    startTimer: function startTimer() {
 	        var _this = this;
@@ -25695,6 +25701,10 @@
 	            _this.setState({
 	                count: newCount >= 0 ? newCount : 0
 	            });
+
+	            if (newCount === 0) {
+	                _this.setState({ countdownStatus: 'stopped' });
+	            }
 	        }, 1000);
 	    },
 	    setCountdown: function setCountdown(seconds) {
