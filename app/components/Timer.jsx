@@ -43,17 +43,12 @@ var Timer = React.createClass({
         clearInterval(this.timer);
     },
     render: function () {
-        var { count } = this.state;
-        var getControlsState = () => {
-            if (this.state.countStatus === 'stopped') return 'paused';
-            return this.state.countStatus;
-        };
-
+        var { count, countStatus } = this.state;
         return (
             <div>
                 <h1 className="page-title">Timer</h1>
                 <Clock totalSeconds={count} />
-                <Controls countdownStatus={getControlsState()} onStatusChange={this.statusChange} />
+                <Controls countdownStatus={countStatus} onStatusChange={this.statusChange} />
             </div>
         )
     }
