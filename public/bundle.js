@@ -25600,7 +25600,7 @@
 	    getInitialState: function getInitialState() {
 	        return {
 	            count: 0,
-	            countStatus: 'paused'
+	            countStatus: 'stopped'
 	        };
 	    },
 	    componentDidUpdate: function componentDidUpdate(prevProps, prevState) {

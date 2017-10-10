@@ -6,7 +6,7 @@ var Timer = React.createClass({
     getInitialState: () => {
         return {
             count: 0,
-            countStatus: 'paused'
+            countStatus: 'stopped'
         }
     },
     componentDidUpdate: function(prevProps, prevState) {
